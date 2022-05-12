@@ -43,5 +43,5 @@ const filterCourses = (courses, range) => {
 
 // Результат
 console.log(filterCourses(courses, requiredRange1));
-// console.log(filterCourses(courses, requiredRange2));
-// console.log(filterCourses(courses, requiredRange3));
+console.log(filterCourses(courses, requiredRange2));
+console.log(filterCourses(courses, requiredRange3));
