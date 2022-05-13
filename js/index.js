@@ -18,7 +18,7 @@ let requiredRange3 = [200, null]; // от 200
 // Решение
 const filterCourses = (courses, range) => {
   const minRange = range[0] || 0;
-  const maxRange = range[1] || 1000;
+  const maxRange = range[1] || Infinity;
 
   return courses.filter((course) => {
     const min = course.prices[0] || 0;
