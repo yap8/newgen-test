@@ -24,7 +24,7 @@ const filterCourses = (courses: Course[], range: Range): Course[] => {
 
   return courses.filter((course: Course) => {
     const min: number = course.prices[0] || 0;
-    const max: number = course.prices[1] || 1000;
+    const max: number = course.prices[1] || Infinity;
 
     if (min <= maxRange && (min >= minRange || max >= minRange)) return true;
   });
@@ -38,8 +38,8 @@ console.log(filterCourses(courses, requiredRange3));
 // Дополнительное задание
 const sortCourses = (courses: Course[], highToLow?: boolean): Course[] => {
   return courses.sort((courseA, courseB) => {
-    const maxA: number = courseA.prices[1] || 1000;
-    const maxB: number = courseB.prices[1] || 1000;
+    const maxA: number = courseA.prices[1] || Infinity;
+    const maxB: number = courseB.prices[1] || Infinity;
 
     const minA: number = courseA.prices[0] || 0;
     const minB: number = courseB.prices[0] || 0;
