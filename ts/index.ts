@@ -22,24 +22,12 @@ const filterCourses = (courses: Course[], range: Range): Course[] => {
   const minRange: number = range[0] || 0;
   const maxRange: number = range[1] || 1000;
 
-  let result: Course[] = courses;
-
-  // Попадает ли в maxRange
-  result = result.filter((course: Course) => {
-    const min: number = course.prices[0] || 0;
-
-    if (min <= maxRange) return true;
-  });
-
-  // Попадает ли в minRange
-  result = result.filter((course: Course) => {
+  return courses.filter((course: Course) => {
     const min: number = course.prices[0] || 0;
     const max: number = course.prices[1] || 1000;
 
-    if (min >= minRange || max >= minRange) return true;
+    if (min <= maxRange && (min >= minRange || max >= minRange)) return true;
   });
-
-  return result;
 };
 
 // Результат
